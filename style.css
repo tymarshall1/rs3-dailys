@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #1a120b;
+  --secondary-color: #3c2a21;
+  --tertiary-1: #d5cea3;
+  --tertiary-2: #e5e5cb;
+  --margins-between-items: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--main-color);
+  font-size: 16px;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+
+header {
+  background-color: var(--tertiary-2);
+  min-height: 100px;
+  text-align: center;
+}
+
+.content-container {
+  margin: auto 0;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--tertiary-2);
+  padding: 1rem;
+}
+
+details {
+  background-color: var(--tertiary-1);
+  color: var(--secondary-color);
+  user-select: none;
+  margin: var(--margins-between-items) 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  background-color: var(--tertiary-2);
+  padding: 1rem 0 1rem 1rem;
+}
+
+summary > h1::after {
+  position: absolute;
+  right: 1rem;
+  content: url(assets/downArrow.svg);
+}
+
+.event {
+  padding: 1rem;
+}

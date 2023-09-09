@@ -1,0 +1,88 @@
+{
+  "dailys": [
+    {
+      "name": "Guthix caches",
+      "description": "can do two a day"
+    },
+    {
+      "name": "Nemi forest",
+      "description": "go to https://www.reddit.com/r/NemiForest/ and look at map"
+    },
+    {
+      "name": "Jack of trades aura",
+      "description": ""
+    },
+    {
+      "name": "Shop runs",
+      "description": "Varrock sword shop, Varrock armour shop, Varrock Staff shop, Slayer masters for boots, gems, and broad arrows, Al kharid scimitars, falador shields"
+    },
+    {
+      "name": "Oo'glog red sandstone and meat",
+      "description": "Mine redsandstone, crush to glass and buy meat from the shops"
+    },
+    {
+      "name": "Traveling Merchant",
+      "description": "Join WhirlpoolDnD friends chat to get the scout, Buy Goebi Burial Charms, Unstable air rune, Anima crystal, Slayer VIP Coupon, Distraction & Diversion reset tokens, Sacred Clay (optional), Livid plant, Gift for the Reaper, Dragonkin lamp, Dungeoneering Wildcard, Deathtouched dart (optional)"
+    },
+    {
+      "name": "Reaper task",
+      "description": ""
+    },
+    {
+      "name": "Player owned farms",
+      "description": "Go check animals and sell for beans. Also send out trapper when available"
+    },
+    {
+      "name": "Vis wax",
+      "description": "Go to runecrafting guild with wicked hood"
+    }
+  ],
+  "weeklys": [
+    {
+      "name": "Water filtration system",
+      "description": "in Al kharid"
+    },
+    {
+      "name": "Herby Werby",
+      "description": "on anacronia"
+    },
+    {
+      "name": "Penguin hide and seek",
+      "description": "go to https://jq.world60pengs.com/ to find locations"
+    },
+    {
+      "name": "Tears of guthix",
+      "description": ""
+    },
+    {
+      "name": "Circus",
+      "description": "location can be found on https://jq.world60pengs.com/"
+    },
+    {
+      "name": "Miscellania",
+      "description": ""
+    },
+    {
+      "name": "Agoroth",
+      "description": "Can teleport directly to boss with games necklace"
+    },
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
+  "monthlys": [
+    {
+      "name": "Troll invasion",
+      "description": "Burthrope"
+    },
+    {
+      "name": "Giant oyster",
+      "description": "In front of wizard tower"
+    },
+    {
+      "name": "God statues",
+      "description": ""
+    }
+  ]
+}
