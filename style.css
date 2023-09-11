@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   background-color: var(--main-color);
   font-size: 16px;
+  min-width: 350px;
 }
 
 .site-container {
@@ -25,9 +26,11 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--tertiary-2);
   min-height: 100px;
-  text-align: center;
 }
 
 .content-container {
@@ -62,15 +65,36 @@ input[type="checkbox"] {
 }
 
 summary {
+  position: relative;
   cursor: pointer;
   list-style: none;
   background-color: var(--tertiary-2);
   padding: 1rem 0 1rem 1rem;
 }
 
+summary > h1 {
+  display: inline;
+}
+
+summary > button {
+  position: absolute;
+  right: 3rem;
+  top: 25%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--main-color);
+  border-radius: 25px;
+  background-color: var(--tertiary-1);
+  color: var(--secondary-color);
+}
+
+summary > button:hover {
+  background-color: var(--tertiary-2);
+}
+
 summary > h1::after {
   position: absolute;
   right: 1rem;
+  top: 27%;
   content: url(assets/downArrow.svg);
 }
 
