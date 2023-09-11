@@ -4,13 +4,25 @@ let monthlys = document.querySelector("#monthlys");
 
 dailys.addEventListener("toggle", () => console.log("Placeholder for now"));
 
+window.addEventListener("load", () => {
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  checkboxes.forEach((checkbox) => {
+    const isChecked = localStorage.getItem(checkbox.id);
+
+    if (isChecked === "true") {
+      checkbox.checked = true;
+      crossOutEvents(checkbox);
+    }
+  });
+});
+
 const eventsJson = fetch("rs3Events.json")
   .then((response) => response.json())
   .then((json) => {
     return json;
   });
 
-let setAllEvents = async () => {
+const setAllEvents = async () => {
   const eventObj = await eventsJson;
   setEvent("dailys", eventObj);
   setEvent("weeklys", eventObj);
@@ -19,18 +31,19 @@ let setAllEvents = async () => {
 
 function setEvent(eventType, eventObj) {
   eventObj[eventType].map((event) => {
-    let singleEvent = document.createElement("div");
-    let eventName = document.createElement("label");
-    let eventCheckbox = document.createElement("input");
-    let eventDisc = document.createElement("p");
+    const singleEvent = document.createElement("div");
+    const eventName = document.createElement("label");
+    const eventCheckbox = document.createElement("input");
+    const eventDisc = document.createElement("p");
 
     eventName.htmlFor = event.name;
 
     eventCheckbox.type = "checkbox";
     eventCheckbox.id = event.name;
-    eventCheckbox.addEventListener("change", () =>
-      crossOutEvents(eventCheckbox, eventName, eventDisc)
-    );
+    eventCheckbox.addEventListener("change", () => {
+      localStorage.setItem(eventCheckbox.id, eventCheckbox.checked);
+      crossOutEvents(eventCheckbox);
+    });
 
     singleEvent.classList.add("event");
     eventName.textContent = event.name;
@@ -54,13 +67,24 @@ function determineEventTypeToSet(eventType, singleEvent) {
   }
 }
 
-function crossOutEvents(eventCheckbox, eventName, eventDisc) {
+function crossOutEvents(eventCheckbox) {
   if (eventCheckbox.checked === true) {
-    eventName.setAttribute("style", "text-decoration: line-through;");
-    eventDisc.setAttribute("style", "text-decoration: line-through;");
+    //this is selecting the label inside event div
+    eventCheckbox.nextSibling.setAttribute(
+      "style",
+      "text-decoration: line-through;"
+    );
+    //this is selecting the paragraph inside event div
+    eventCheckbox.nextSibling.nextSibling.setAttribute(
+      "style",
+      "text-decoration: line-through;"
+    );
   } else {
-    eventName.removeAttribute("style", "text-decoration");
-    eventDisc.removeAttribute("style", "text-decoration");
+    eventCheckbox.nextSibling.removeAttribute("style", "text-decoration;");
+    eventCheckbox.nextSibling.nextSibling.removeAttribute(
+      "style",
+      "text-decoration;"
+    );
   }
 }
 
