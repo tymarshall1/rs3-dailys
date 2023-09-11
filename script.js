@@ -28,6 +28,9 @@ function setEvent(eventType, eventObj) {
 
     eventCheckbox.type = "checkbox";
     eventCheckbox.id = event.name;
+    eventCheckbox.addEventListener("change", () =>
+      crossOutEvents(eventCheckbox, eventName, eventDisc)
+    );
 
     singleEvent.classList.add("event");
     eventName.textContent = event.name;
@@ -48,6 +51,16 @@ function determineEventTypeToSet(eventType, singleEvent) {
     weeklys.appendChild(singleEvent);
   } else if (eventType === "monthlys") {
     monthlys.appendChild(singleEvent);
+  }
+}
+
+function crossOutEvents(eventCheckbox, eventName, eventDisc) {
+  if (eventCheckbox.checked === true) {
+    eventName.setAttribute("style", "text-decoration: line-through;");
+    eventDisc.setAttribute("style", "text-decoration: line-through;");
+  } else {
+    eventName.removeAttribute("style", "text-decoration");
+    eventDisc.removeAttribute("style", "text-decoration");
   }
 }
 
