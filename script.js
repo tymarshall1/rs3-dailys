@@ -20,13 +20,20 @@ let setAllEvents = async () => {
 function setEvent(eventType, eventObj) {
   eventObj[eventType].map((event) => {
     let singleEvent = document.createElement("div");
-    let eventName = document.createElement("h4");
+    let eventName = document.createElement("label");
+    let eventCheckbox = document.createElement("input");
     let eventDisc = document.createElement("p");
+
+    eventName.htmlFor = event.name;
+
+    eventCheckbox.type = "checkbox";
+    eventCheckbox.id = event.name;
 
     singleEvent.classList.add("event");
     eventName.textContent = event.name;
     eventDisc.textContent = event.description;
 
+    singleEvent.appendChild(eventCheckbox);
     singleEvent.appendChild(eventName);
     singleEvent.appendChild(eventDisc);
 
