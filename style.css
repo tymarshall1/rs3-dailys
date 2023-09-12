@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Edu TAS Beginner", cursive, sans-serif;
 }
 
 :root {
@@ -31,6 +34,7 @@ header {
   justify-content: center;
   background-color: var(--tertiary-2);
   min-height: 100px;
+  text-align: center;
 }
 
 .content-container {
@@ -72,6 +76,10 @@ summary {
   padding: 1rem 0 1rem 1rem;
 }
 
+summary::marker {
+  content: "";
+}
+
 summary > h1 {
   display: inline;
 }
@@ -85,6 +93,8 @@ summary > button {
   border-radius: 25px;
   background-color: var(--tertiary-1);
   color: var(--secondary-color);
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 summary > button:hover {
