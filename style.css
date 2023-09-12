@@ -71,13 +71,13 @@ input[type="checkbox"] {
 summary {
   position: relative;
   cursor: pointer;
-  /* list-style: none; */
+  list-style: none;
   background-color: var(--tertiary-2);
   padding: 1rem 0 1rem 1rem;
 }
 
-summary::marker {
-  content: "";
+summary::-webkit-details-marker {
+  display: none;
 }
 
 summary > h1 {
