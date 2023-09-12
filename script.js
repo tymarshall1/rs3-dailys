@@ -1,6 +1,19 @@
-let dailys = document.querySelector("#dailys");
-let weeklys = document.querySelector("#weeklys");
-let monthlys = document.querySelector("#monthlys");
+const dailys = document.querySelector("#dailys");
+const weeklys = document.querySelector("#weeklys");
+const monthlys = document.querySelector("#monthlys");
+const dailyClearCheckboxBtn = document.querySelector("#clearDailys");
+const weeklyClearCheckboxBtn = document.querySelector("#clearWeeklys");
+const monthlyClearCheckboxBtn = document.querySelector("#clearMonthlys");
+
+dailyClearCheckboxBtn.addEventListener("click", () => clearCheckboxes("daily"));
+
+weeklyClearCheckboxBtn.addEventListener("click", () =>
+  clearCheckboxes("weekly")
+);
+
+monthlyClearCheckboxBtn.addEventListener("click", () =>
+  clearCheckboxes("monthly")
+);
 
 dailys.addEventListener("toggle", () => console.log("Placeholder for now"));
 
@@ -86,6 +99,33 @@ function crossOutEvents(eventCheckbox) {
       "text-decoration;"
     );
   }
+}
+
+function clearCheckboxes(eventType) {
+  switch (eventType) {
+    case "daily":
+      clearCheckboxHelper(dailys);
+      break;
+    case "weekly":
+      clearCheckboxHelper(weeklys);
+      break;
+    case "monthly":
+      clearCheckboxHelper(monthlys);
+      break;
+  }
+}
+
+function clearCheckboxHelper(eventType) {
+  const events = Array.from(eventType.children);
+  events.forEach((e) => {
+    if (e.className === "event") {
+      if (e.firstChild.checked === true) {
+        e.firstChild.checked = false;
+        crossOutEvents(e.firstChild);
+        localStorage.setItem(e.firstChild.id, e.firstChild.checked);
+      }
+    }
+  });
 }
 
 setAllEvents();
