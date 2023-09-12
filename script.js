@@ -15,8 +15,6 @@ monthlyClearCheckboxBtn.addEventListener("click", () =>
   clearCheckboxes("monthly")
 );
 
-dailys.addEventListener("toggle", () => console.log("Placeholder for now"));
-
 window.addEventListener("load", () => {
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
   checkboxes.forEach((checkbox) => {

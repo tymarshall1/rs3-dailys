@@ -109,6 +109,10 @@ summary > h1::after {
   content: url(assets/downArrow.svg);
 }
 
+details[open] > summary > h1::after {
+  rotate: 180deg;
+}
+
 .event {
   padding: 1rem;
 }
