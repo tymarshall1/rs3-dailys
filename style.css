@@ -121,3 +121,9 @@ details[open] > summary > button {
 .event {
   padding: 1rem;
 }
+
+@media only screen and (min-width: 992px) {
+  .content-container {
+    margin: auto 25%;
+  }
+}
